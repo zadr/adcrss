@@ -1,7 +1,7 @@
 Unofficial ADC Library RSS Feeds
 ================================
 
-Unofficial RSS feeds for the [Mac Developer Library](http://developer.apple.com/library/mac) and [iOS Develoepr Library](http://developer.apple.com/library/ios) Apple.
+Unofficial RSS feeds for the [Mac Developer Library](http://developer.apple.com/library/mac) and [iOS Developer Library](http://developer.apple.com/library/ios) Apple.
 
 The Feeds:
 ---------
