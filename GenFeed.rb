@@ -11,6 +11,7 @@ class GenFeed
   def uri=(uri)
     @uri = URI.parse(uri)
     @http = Net::HTTP.new(@uri.host, @uri.port)
+    @old_data_hash = ""
   end
 
   def os=(os)
@@ -18,7 +19,6 @@ class GenFeed
   end
 
   def run
-    @old_data_hash = ""
     request = Net::HTTP::Get.new(@uri.request_uri)
     response = @http.request(request)
 
