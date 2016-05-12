@@ -19,9 +19,12 @@ class GenFeed
   end
 
   def run
-    request = Net::HTTP::Get.new(@uri.request_uri)
-    response = @http.request(request)
-
+    response = Net::HTTP.get_response @uri
+    while response.kind_of? Net::HTTPMovedPermanently
+        @uri = URI.parse(response.header['location'])
+        response = Net::HTTP.get_response @uri
+    end
+    
     if response.kind_of? Net::HTTPSuccess
       new_data_hash = Digest::MD5.hexdigest(response.body)
     
